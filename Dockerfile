@@ -1,4 +1,8 @@
 FROM python:3.9-slim-buster
+
+ARG UID
+RUN usermod -u $UID www-data && groupmod -g $UID www-data
+
 RUN pip install --upgrade pip
 ENV PYTHONUNBUFFERED = 1
 
