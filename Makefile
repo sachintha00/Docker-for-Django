@@ -2,6 +2,7 @@ up-f:
 	docker-compose --build --remove-orphans
 
 up:
+	sudo chmod -R 777 .
 	docker-compose up -d --build --remove-orphans
 
 down:
