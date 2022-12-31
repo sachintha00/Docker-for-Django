@@ -1,7 +1,12 @@
-FROM python:3.9-buster
+FROM python:3.9-slim-buster
+RUN pip install --upgrade pip
 ENV PYTHONUNBUFFERED = 1
+
+# RUN adduser -D rootuser
+# USER rootuser
 RUN mkdir /app
 WORKDIR /app
+
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
-COPY .s /app/
+COPY . /app/
