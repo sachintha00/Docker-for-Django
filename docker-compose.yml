@@ -18,7 +18,19 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=postgresnnn
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=test123
     container_name: postgres_db
+
+  pg-admin:
+    image: dpage/pgadmin4:6
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@email.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    container_name: pgadmin
