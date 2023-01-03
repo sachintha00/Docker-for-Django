@@ -8,11 +8,11 @@ up:
 down:
 	docker-compose down --remove-orphans
 
-create-project:
-	docker-compose run web django-admin startproject $(name) .
+create:
+	docker-compose run web django-admin startproject $(project) .
 
 shell:
-	docker-compose exec -it django_container /bin/sh
+	docker exec -it django_container /bin/sh
 
 migrate:
 	docker-compose exec web python manage.py migrate
