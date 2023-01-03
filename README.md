@@ -25,3 +25,6 @@ Docker-for-Django based development environment starter for Django.
   make create project={project name}
 ~~~  
 
+### Copyright
+
+Copyright (c) 2023. Sachintha Madhawa <[@SachinthaMadhawa](https://www.github.com/sachintha00)>
