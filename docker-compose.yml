@@ -1,18 +1,6 @@
 version: '3'
 
 services:
-  web:
-    build: . #path
-    volumes:
-      - .:/app/
-    ports:
-      - "8000:8000"
-    image: app:django
-    container_name: django_container
-    command: python manage.py runserver 0.0.0.0:8000 #commands
-    depends_on:
-      - db
-
   db:
     image: postgres:14.6-alpine
     restart: always
@@ -36,3 +24,15 @@ services:
     volumes:
       - ./data/pgadmin:/var/lib/pgadmin
     container_name: pgadmin
+
+  web:
+    build: . #path
+    volumes:
+      - .:/app/
+    ports:
+      - "8000:8000"
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8000 #commands
+    depends_on:
+      - db
