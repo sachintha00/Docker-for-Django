@@ -9,7 +9,7 @@ down:
 	docker compose down --remove-orphans
 
 create:
-	docker compose run web django-admin startproject $(project) .
+	docker compose run web django-admin startproject $(project) ./src
 
 shell:
 	docker exec -it django_container /bin/sh
